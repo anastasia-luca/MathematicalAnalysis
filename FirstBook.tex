@@ -1,0 +1,126 @@
+\documentclass{article}
+\title{\Huge Analiz\u a matematic\u a}
+\author{Ambiguelle Bonaparte}
+\date{09.03.2023}
+\usepackage{amsfonts}
+\usepackage[romanian]{babel}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancypagestyle{firstpage} {
+\rhead{Anastasia Luca}
+}
+\thispagestyle{firstpage}
+\fancyhead[R]{Anastasia Luca}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Integrale}
+\subsection{Defini\c tie: Func\c tie primitiv\u a}
+Se numește {\bf func\c tie  primitiv\u a} a func\c tiei f pe intervalul I, func\c tia F definit\u a mai sus, care \^ indeplinește condițiile i. și ii. . Acestă func\c tie F se mai nume\c ste \c si {\bf func\c tia antiderivat\u a} func\c tiei f pe intervalul I. \cite{text1}
+\subsection{Defini\c tie: Func\c tie primitivabil\u a}
+Dacă exist\u a o func\c tie F, care îndeplinește condițiile i. și ii., atunci se spune că funcția f este {\bf primitivabilă} pe intervalul I.
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{| l | c | c |}
+\hline
+Nr. crt. & Formule & Domeniu \\ \hline
+ 1 & $\int 1 dx = x + C$ & $x \in \mathbb{R}$ \\ \hline 
+ 2 & $\int x^n dx = \frac{x^{n + 1}}{n + 1} + C$ & $x \in \mathbb{R}, n \in \mathbb{N}$\\ \hline
+ 3 & $\int \frac 1x dx = \ln |x| + C$ & $x \in \mathbb{R}^*$\\ \hline
+ 4 & $\int a^x dx = \frac{a^x}{\ln a} + C$ & $x \in \mathbb{R}, a \in {\mathbb{R}}_+^* \backslash \{1\}$\\ \hline
+ 5 & $\int \sin x dx = -\cos x + C$ & $x \in \mathbb{R}$\\ \hline
+ 6 & $\int \cos x dx = \sin x + C$ & $x \in \mathbb{R}$\\ \hline
+ 7 & $\int \cot x dx = \ln |\sin x|+ C$ & $x \in \mathbb{R}\backslash \{k\pi | k \in \mathbb{Z}\}$\\ \hline
+ 8 & $\int \frac1{\sqrt a^2 - x^2} dx = \arcsin \frac xa + C$ & $x \in (-a, a), a > 0$\\ \hline
+\end{tabular}
+\end{center}
+\caption{Formulele integralelor nedefinite}
+\end{table}
+\newline
+{\bf Observa\c tii:}
+\begin{itemize}
+\item \^ In exemplele de mai jos putem observa c\u a func\c tiile date admit mai multe primitive pe intervalul de defini\c tie. Rela\c tia care se stabile\c ste \^ intre primitivele unei func\c tii este data de urm\u atorul rezultat.
+\item \^ Am folosit formulele din sec\c tiunea {\emph Tabela 1: Formulele integralelor nedefinite}
+\end{itemize}
+\section{Integrale improprii dependente de parametri}
+\hspace{0.55 cm}
+Fie $f : [a, b) \times \mathbb{A} \to \mathbb{R}$ o func\c tie cu proprietatea c\u a pentru orice $y \in \mathbb{A}$, aplica\c tia $[a, b) \ni x \to f(x, y) \in \mathbb{R}$ este local integrabil\u a \c si integrala (improprie) $F(x, y) = \int_{a}^{b} f(x, y)dx$ converge. \^ In acest caz func\c tia poate fi numit\u a {\bf integral\u a improprie cu parametru}. \cite{text4} \par
+Prezent\u am \^ in continuare dou\u a dintre cele mai cunoscute integrale de acest tip.
+\subsection{Func\c tiile lui Euler}
+Fie $\Gamma$ \c si B func\c tiile (integralele) lui Euler:
+$$ \Gamma(\alpha) = \int_{0}^{\infty} x^{(\alpha - 1)}e^{-x}dx, \alpha > 0 $$
+$$ B(p, q) = \int_{0}^{1} x^{p - 1}{(1 - x)}^{q - 1}dx, p > 0, q > 0 $$
+\vspace{0.4 cm}
+\newline
+{\bf Propriet\u a\c ti uzuale ale func\c tiei $\Gamma$ \c si $B$:}
+\begin{enumerate}[a.]
+\item $ \Gamma(1) = 1. $
+\item $ \Gamma(\alpha + 1) = \alpha\Gamma(\alpha)$, pentru orice $\alpha > 0$ {\bf (formula de recuren\c t\u a)}.
+\item $ B(p, q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p + q)}. $
+\item $ B(p, q) =\int_{0}^{\infty} \frac{y^{p - 1}}{(1 + y)^{p + q}} dy. $
+\item $\Gamma(n+1) = n!,  \forall n \in \mathbb{N}$.
+\item $\Gamma(\alpha)\Gamma(1 - \alpha) = \frac{\pi}{\sin (\alpha \pi)}, \forall \alpha \in (0, 1)$ {\bf (formula complementelor)}.
+\item $\Gamma(\frac 12) = \sqrt{\pi}$.
+\end{enumerate} \par
+\vspace{0.3 cm}
+S\u a se calculeze valoarea integralei $I = \int_{0}^{\infty}\frac{dx}{1 + x^4}.$
+\newline
+\emph {Solu\c tie.} \cite{text2} Capetele integralei, precum \c si lipsa exponen\c tialei, ne duc, cu g\^ andul la cea de-a doua form\u a a func\c tiei beta (vezi proprietataea d). \^ In acest sens, deoarece \^ in forma amintit\u a avem la numitor suma dintre variabil\u a \c si unitate, facem substitu\c tia $y = x^4$, echivalent\u a cu $x = y^{\frac14}$ (iar $dx = \frac14 y^-{\frac{3}4}dy)$. Cu aceasta, integrala propus\u a devine
+$$ I = \frac14 \int_{0}^{\infty} \frac{y^-{\frac{3}4}}{1 + y} dy, $$
+form\u a \^ in care recunoa\c stem expresia func\c tiei beta, pentru $p - 1 = \frac{-3}4$ \c si $p + q = 1$, adic\u a $p = \frac14$ \c si $q = \frac34$, deci $B(\frac14, \frac34)$. Folosind propriet\u a\c tile c \c si f, ob\c tinem
+$$ I = \frac14 \cdot B(\frac14, \frac34) = \frac14 \cdot \frac{\Gamma(\frac14)\Gamma(\frac34)}{\Gamma(1)} = \frac14 \cdot  \frac{\pi}{\sin(\frac{\pi}4)} = \frac{\pi\sqrt{2}}4.$$ 
+\section{Integrale Multiple}
+Integralele multiple sunt o extindere natural\u a a integralei Riemann pentru cazul func\c tiilor de mai multe variabile. \cite{text3}
+\begin{description}
+\item[Integrale duble] notate $\int\int_{A} f(x, y)dx dy$, unde func\c tia $ f : \mathbb{D} \subset \mathbb{R}^2$ este continu\u a \c si $\mathbb{A} \subset \mathbb{D}$ o mul\c time compact\u a.
+\item[Integrale triple] notate $\int\int_{A}\int f(x, y, z)dx dy dz$, unde func\c tia $ f : \mathbb{D} \subset \mathbb{R}^3$ este continu\u a \c si $\mathbb{A} \subset \mathbb{D}$ o mul\c time compact\u a.
+\end{description}
+\subsection{Integrale Duble}
+\subsubsection{Defini\c tie}
+Fie $D \subset \mathbb{R}^2$ un domeniu compact (\^ inchis \c si m\u arginit). S\u a presupunem c\u a $D_1, D_2, \dots , D_n$ este un \c sir finit de domenii compacte, f\u ar\u a puncte interioare comune, astfel \^ inc\^ at
+\begin{equation}
+D = D_1 \cup D_2 \cup \dots \cup D_n.
+\end{equation}
+Vom spune c\u a rela\c tia (1) define\c ste o \emph {descompunere a domeniului} D \c si not\u am cu $\triangle := {(D_i)}_{i=\overline{1,n}}$ clasa tuturor mult\c timilor ce formeaz\u a aceast\u a descompunere. \par
+Pentru o mul\c time compact\u a $\mathbb{A} \subset \mathbb{R}^2$ , cea mai mare distan\c t\u a dintre dou\u a puncte din A se nume\c ste \emph {diametrul mul\c timii}  A. \^ In cazul descompunerii $\triangle$ a domeniului  $\mathbb{D}$, cel mai mare dintre diametrele mul\c timilor $D_1, \dots , D_n$ se noteaz\u a cu $ ||\triangle||$ \c si se nume\c ste \emph {diametrul descompunerii} $\Delta$. \cite{text5} \par
+Fie acum o func\c tie continu\u a pe domeniul  $\mathbb{D}$. Vom considera, \^ in fiecare subdomeniu $D_i$, c\^ate un punct  $({\xi}_i, {\eta}_i) \in  {\mathbb{D}}_i$, iar apoi form\u am suma
+\begin{equation}
+\sum_{i = 1}^n f({\xi}_i, {\eta}_i) \cdot Aria({\mathbb{D}}_i).
+\end{equation}
+{\bf Propriet\u a\c ti ale integralei duble:}
+\begin{itemize}
+\item liniaritatea \^ in raport cu func\c tia
+\item aditivitatea \^ in raport cu domeniul 
+\item monotonia (pozitivitatea)
+\item proprietatea de medie
+\item proprietatea de majorare a modulului
+\end{itemize}
+\subsection{Integrale Triple}
+\subsubsection{Defini\c tie}
+Fie $V \subset \mathbb{R}^3$ un domeniu compact (\^ inchis \c si m\u arginit).\cite{text6} Analog cu cazul domeniilor plane, vom presupune c\u a $V_1, V_2, \dots , V_n$ este un \c sir finit de domenii compacte, f\u ar\u a puncte interioare comune, astfel \^ inc\^ at
+\begin{equation}
+V = V_1 \cup V_2 \cup \dots \cup V_n.
+\end{equation}
+Vom spune c\u a rela\c tia (3) define\c ste o \emph {descompunere a domeniului} V \c si not\u am cu $\Delta := {(V_i)}_{i=\overline{1,n}}$ clasa tuturor mul\c timilor ce formeaz\u a aceast\u a descompunere. \par
+Din nou ca \^ in cazul capitolului anterior, cel mai mare dintre diametrele mul\c timilor  $V_1, \dots , V_n$ se noteaz\u a cu $ ||\Delta||$ \c si se nume\c ste \emph {diametrul descompunerii} $\Delta$. \^ In fiecare subdomeniu $V_i$ consider\u am c\^ate un punct  $({\xi}_i, {\eta}_i, {\delta}_i) \in  V_i.$ \par
+Fiind dat\u a o func\c tie $f : V \to \mathbb{R}^3$, form\u am suma
+\begin{equation}
+\sum_{i = 1}^n f({\xi}_i, {\eta}_i, {\delta}_i) \cdot Vol(V_i)
+\end{equation}
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{text1}  M. Olteanu, \emph {Curs de analiz\u a func\c tional\u a, Editura Printech 2000}
+\bibitem{text2}  A. Negrescu, \emph {Calcul Integral. O abordare prietenoas\u a, Editura POLITEHNICA PRESS 2021}
+\bibitem{text3}  I. Colojoar\u a, \emph {Analiz\u a matematic\u a, Ed. Didactic\u a \c si pedagogic\u a, Bucure\c sti, 1983}
+\bibitem{text4} Documenta\c tie HTML, \emph {https://liceunet.ro/ghid-calcul-integral/primitive}, accesat la 22.03.2023
+\bibitem{text5} Document PDF, \emph {https://profs.info.uaic.ro/Integrale-duble.pdf}, accesat la 23.03.2023
+\bibitem{text6}  Document PDF, \emph {https://profs.info.uaic.ro/Integrale-triple.pdf}, accesat la 23.03.2023
+\end{thebibliography}
+\end{document} 
